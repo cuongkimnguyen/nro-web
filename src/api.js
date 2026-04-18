@@ -1,13 +1,15 @@
 import axios from 'axios'
 
-export const api = axios.create({
-  baseURL: 'http://160.30.192.170/api/server',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  timeout: 15000,
-})
+import axios from "axios";
 
+const api = axios.create({
+  baseURL: "/api",
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+
+export default api;
 export const registerUser = async ({ username, password }) => {
   const response = await api.post('/cms', {
     username,
